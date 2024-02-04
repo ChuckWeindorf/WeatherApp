@@ -1,0 +1,161 @@
+#grid-containerHead {
+      display: grid;
+      grid-template-columns: auto 170px;
+      background-color: hsl(194, 49%, 82%); 
+      padding: 8px;
+      border-radius: 25px 25px 0px 0px
+      }
+
+      #grid-title {
+            background-color: hsl(194, 49%, 82%); 
+            padding: 0px;
+            font-size: 50px;
+            text-align: left;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 700;
+            color:hsl(230, 72%, 60%); 
+            }
+
+ 
+/*------------------------------------------------------------*/       
+#favAndcities
+        {
+        display: grid;
+        grid-template-columns: 150px auto;
+        background-color: hsl(194, 49%, 82%); 
+        }
+  
+/*------------------------------------------------------------*/      
+  #favorites 
+        {
+        display: inline-grid;
+        background-color: hsl(31, 77%, 52%);
+        border-radius: 25px 25px 25px 25px;
+        margin: 5px;
+        }
+  #cwFavH 
+        {
+        margin-top: 10px;     
+        line-height: 10px;
+        font-family: 'Big Shoulders Display', sans-serif;
+        font-size: 18px;
+        color: hsl(0, 0%, 95%);
+        font-weight: 200;
+        }
+  #cwFavbody 
+      {
+      margin-top: 25px;
+      font-family: 'Lexend Deca', sans-serif;
+      font-size: 15px;
+      font-weight: 200;
+      line-height: 5px;
+      color: hsla(0, 0%, 100%, 0.75);
+      cursor: pointer;
+      }
+
+/*------------------------------------------------------------*/
+
+#grid-containerCities {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: hsl(194, 49%, 82%);  
+      }
+
+/*------------------------------------------------------------*/
+
+.cityChild 
+        {
+        width: 225px;
+        height: 350px;
+        border-radius: 25px 25px 25px 25px;
+        margin-top: 5px;
+        margin-right: 10px;        
+        margin-bottom: 5px;
+        }
+.innerdiv
+      {
+      margin-top: 0px;
+      margin-left: 20px;
+      margin-right: 0px;
+      padding: 5;
+      }
+      
+.image
+        {
+        display: flex;
+        font-size: 65px;
+        font-family: 'Big Shoulders Display', sans-serif;
+        font-weight: 700;
+        color: hsl(0, 0%, 95%);
+        }
+.cwhead 
+      {
+      margin-top: 20px;     
+      line-height: 10px;
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-size: 28px;
+      color: hsl(0, 0%, 95%);
+      font-weight: 700;
+      }
+
+.cwbody 
+      {
+      margin-top: 25px;
+      font-family: 'Lexend Deca', sans-serif;
+      font-size: 15px;
+      font-weight: 200;
+      line-height: 20px;
+      color: hsla(0, 0%, 100%, 0.75)
+      }
+/*------------------------------------------------------------*/
+
+#grid-containerFoot {
+      display: grid;
+      grid-template-columns: auto ;
+      background-color: hsl(194, 49%, 82%); 
+      padding: 10px;
+      border: 0px solid rgba(0, 0, 0, 0.8);
+      border-radius: 0px 0px 25px 25px 
+    }
+
+#grid-Foot {
+        background-color: hsl(194, 49%, 82%); 
+        padding: 5px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 15px;
+        font-weight: 200;
+        text-align: right;
+        color:hsl(230, 72%, 60%);
+        }
+
+        #grid-measure {  
+            background-color: hsl(194, 49%, 82%); 
+            padding: 0px;
+            font-size: 15px;
+            text-align: right;
+            font-family: 'Big Shoulders Display', sans-serif;
+            font-weight: 200;
+            color:hsl(230, 72%, 60%); 
+            text-align: right;
+            cursor:pointer
+            }
+/*------------------------------------------------------------*/
+
+#button-city {
+      display: inline-block;
+      outline: 0;
+      cursor: pointer;
+      padding: 5px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      vertical-align: middle;
+      border: 1px solid;
+      border-radius: 6px;
+      color: #ffffff;
+      background-color: hsl(230, 72%, 60%); 
+      border-color: #1b1f2326;
+      box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+      transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+      transition-property: color, background-color, border-color;
+}

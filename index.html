@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App CW</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    
+<div id="grid-containerHead">
+  <div id="grid-title"><i>allweather Explorer</i></div>
+  <div><img src="./images/color2.png" alt="colors"></div>
+</div>
+
+<div id="favAndcities">
+<div id="favorites">
+  <div class="innerdiv">
+       <h1 id="cwFavH">Fave Cities</h1>
+       <div id="cwFavbody">
+       </div>
+  </div></div>    
+
+<div id="grid-containerCities">
+<!--This is the zone for DOM creation of each city in the grid-->
+</div>
+
+</div> <!--Fave and cities-->
+
+<div id="grid-containerFoot">
+ <div id="grid-Foot"><label>City</label><input type = "text" id="newcity"/>
+  <label>Lattitude</label><input type = "number" id="lattitude"/>
+  <label>Longitude</label><input type = "number" id="longitude"/>  
+  <button id="button-city" role="button" id="getCity">Get City</button></div>
+ <div id="grid-measure">lat = 25.84 to 49.38   long = -66.95 to -124.67 <i>See metric</i></div>
+
+</body>
+</html>
