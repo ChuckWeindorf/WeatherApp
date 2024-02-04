@@ -81,16 +81,25 @@
       }
       
 .image
-        {
-        display: flex;
-        font-size: 65px;
-        font-family: 'Big Shoulders Display', sans-serif;
-        font-weight: 700;
-        color: hsl(0, 0%, 95%);
-        }
+      {
+      display: absolute;
+      font-size: 65px;
+      font-family: 'Big Shoulders Display', sans-serif;
+      font-weight: 700;
+      color: hsl(0, 0%, 95%);
+      }
+
+.trash
+      {
+      position: relative;
+      left: 170px;
+      top: 230px;
+      }
+
 .cwhead 
       {
-      margin-top: 20px;     
+      position: absolute;
+      margin-top: 10px;     
       line-height: 10px;
       font-family: 'Big Shoulders Display', sans-serif;
       font-size: 28px;
@@ -100,7 +109,8 @@
 
 .cwbody 
       {
-      margin-top: 25px;
+      position: absolute;
+      margin-top: 50px;
       font-family: 'Lexend Deca', sans-serif;
       font-size: 15px;
       font-weight: 200;

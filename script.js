@@ -18,6 +18,7 @@ class weatherPoint {
     //
     let tmpCityChild = document.createElement("div");
     tmpCityChild.className = ("cityChild");
+    tmpCityChild.id = "C" + idNumber;
     //
     let vTemp = Number(this.temperature);
     if (currMeasure == "metric") {vTemp = ((9*vTemp)/5) + 32}
@@ -34,17 +35,15 @@ class weatherPoint {
     let tmpHeader = document.createElement("div");
     tmpHeader.className = "cwhead";
     tmpHeader.innerHTML = `<strong>${this.cityName}</strong>`;
-    //
+    //    
     let tmpPara = document.createElement("p");
     tmpPara.className = "cwbody";
-    var vwind = " MPH";
-    var vtemp = " deg F" 
+    let vwind = " MPH";
+    let vtemp = " deg F" 
     if (currMeasure == "metric") {vwind = " KPH";
                                    vtemp = " deg C"};
     //
     tmpPara.innerHTML = 
-    `<strong>Lattitude:</strong> ${this.lattitude}<br>` +
-    `<strong>Longitude:</strong> ${this.longitude}<br>` +
     `<strong>Temperature:</strong> ${this.temperature}${vtemp}<br>` +
     `<strong>Humidity:</strong> ${this.humidity}%<br>` +
     `<strong>Wind Speed:</strong> ${this.windSpeed}${vwind}<br>` +
@@ -52,10 +51,12 @@ class weatherPoint {
     `<strong>Precip:</strong> ${this.precipitation}<br>` +
     `<strong>Cloud Percent:</strong> ${this.cloudPercent}%<br>` +
     `<strong>Barometric:</strong> ${this.barometric} hPa<br>` +
+    `<strong>Lat:</strong> ${this.lattitude}<br>` +
+    `<strong>Lon:</strong> ${this.longitude}<br>` +
     `<strong>Measure:</strong> ${this.measure}`;
     let tmpImage = document.createElement("div");
     tmpImage.className = "image";
-    //need values for rain and snow
+    
     if (this.precipitation.indexOf("snow") > -1) 
     {
      tmpImage.innerHTML = '<img src="./images/snowy.png" alt="snowy">';
@@ -75,10 +76,18 @@ class weatherPoint {
        }
     else {tmpImage.innerHTML = '<img src="./images/prtlycloudy.png" alt="prtlycloudy">';}
     tmpImage.innerHTML = `${Math.round(Number(this.temperature))}&deg` + tmpImage.innerHTML;
-   
+
+    let tmpTrash = document.createElement("img");
+    tmpTrash.className = "trash";
+    tmpTrash.id = "T" + idNumber;
+    tmpTrash.src= "./images/trash.png" 
+    tmpTrash.alt= "trash";
+    tmpTrash.addEventListener("click", deleteCity);
+    
     tmpInner.appendChild(tmpImage);
     tmpInner.appendChild(tmpHeader);
     tmpInner.appendChild(tmpPara);
+    tmpInner.appendChild(tmpTrash);
     tmpCityChild.appendChild(tmpInner);
     tmpCityContainer.appendChild(tmpCityChild);
   }
@@ -105,19 +114,24 @@ function setAPIParams(latt, long) {
         })
     }
 
-  function showCity(cityArrIndex) 
+    function showCity(cityArrIndex) 
     {
       allWeatherPoints[cityArrIndex].makeHTML(currentCityID);
       currentCityID++;
+    }
+
+    function deleteCity(event) 
+    {
+      document.getElementById("C" + event.srcElement.id.substring(1)).remove();
     }
 
   function createCityInstance(cityName, data)  
   { 
     const vlat = data.coord.lat;
     const vlong = data.coord.lon;
-    var vtemp = data.main.temp;
+    let vtemp = data.main.temp;
     const vhum = data.main.humidity;
-    var vwind = data.wind.speed;
+    let vwind = data.wind.speed;
     const vdeg = data.wind.deg;
     const vprecip = data.weather[0].description;
     const vclouds = data.clouds.all;
@@ -172,6 +186,7 @@ function callNewCity()
 //MAIN ROUTINE -----------------
 document.getElementById("grid-measure").addEventListener("click", toggleMeasure);
 document.getElementById("button-city").addEventListener("click", callNewCity);
+
 //Globals
 let allWeatherPoints = [];
 let currMeasure = "imperial";
