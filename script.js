@@ -1,3 +1,7 @@
+//PUT YOUR API KEY HERE TO RUN
+const CWapikey = "&appid=xxxxxxxxxxxxxxxxxxxxxxxx";
+
+
 class weatherPoint {
   constructor (cityName, lat, long, temp, hum, wind, deg, precip, clouds, baro, measure)
   {
@@ -98,7 +102,6 @@ function setAPIParams(latt, long) {
   const latbase = "&lat=";
   const longbase = "&lon=";
   const unitsbase = "&units=";
-  const CWapikey = "&appid=69b8b0e64651687e2191a6a07b2f7f2d";
   let URLlong = urlbase + latbase + latt + longbase + long + unitsbase + currMeasure + CWapikey;
   return URLlong;
 }
